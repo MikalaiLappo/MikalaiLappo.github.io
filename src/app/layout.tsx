@@ -34,7 +34,7 @@ export default function RootLayout({
                 ))}
               </div>
             </header>
-            <div className="flex">{children} </div>
+            <main>{children}</main>
           </div>
         </div>
       </body>

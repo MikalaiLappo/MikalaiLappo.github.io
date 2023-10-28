@@ -8,7 +8,7 @@ const HomePage = async () => {
   )
 
   return (
-    <main className="flex flex-col flex-wrap justify-center p-4 md:flex-row md:space-x-6">
+    <div className="flex flex-col flex-wrap justify-center max-w-5xl gap-6 md:flex-row ">
       {projects.map(({ link, cover, title, excerpt }, i) => (
         <Card
           key={title + i}
@@ -18,7 +18,7 @@ const HomePage = async () => {
           excerpt={excerpt}
         />
       ))}
-    </main>
+    </div>
   )
 }
 

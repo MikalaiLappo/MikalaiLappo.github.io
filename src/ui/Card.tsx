@@ -13,23 +13,25 @@ const Card = ({ link, coverSrc, title, excerpt, className }: ICardProps) => {
   return (
     <div
       className={cn(
-        'flex flex-col max-w-80 max-h-80 items-center md:items-start bg-supp rounded-3xl',
+        'flex flex-col flex-wrap w-full lg:w-[320px] lg:h-[400px] transition duration-300 items-center  bg-secondary rounded-3xl group hover:border-[#565166] border-transparent border-2 overflow-clip',
         className,
       )}
     >
       <Link href={link} className="w-full h-full">
-        <div>
+        <div className="lg:w-[320px] lg:h-[224px] max-h-[224px] rounded-md overflow-hidden">
           <Image
-            className="rounded"
-            width="3"
+            className="object-cover object-center w-full h-full transition duration-150 ease-in rounded group-hover:-rotate-3 group-hover:scale-110 group-hover:opacity-100 opacity-60"
+            width="400"
             height="200"
             src={coverSrc}
-            alt={`[PREVIEW] ${title}`}
+            alt={`${title}`}
           />
         </div>
-        <div className="flex flex-col h-full">
-          <div className="py-4 text-2xl text-dracula-purple-400">{title}</div>
-          <div className="items-center py-1 text-white h-max">{excerpt}</div>
+        <div className="flex flex-col h-full p-[18px] pt-[24px] font-bold">
+          <div className="text-lg text-white">{title}</div>
+          <div className="items-center text-sm break-all text-secondary h-max line-clamp-2">
+            {excerpt}
+          </div>
         </div>
       </Link>
     </div>
