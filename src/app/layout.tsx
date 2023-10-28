@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import './globals.css'
+import 'dracula-ui/styles/dracula-ui.css'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import cn from 'classnames'
 
@@ -17,11 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'bg-[#0e0d11]')}>
+      <body className={cn(inter.className, 'bg-[#0e0d11] drac-scrollbar-grey')}>
         <div className="flex justify-center w-full">
-          <div className="flex flex-col max-w-3xl">
-            <header className="flex justify-between text-sm transition-shadow duration-200 ">
-              <div>
+          <div className="flex flex-col items-center w-full">
+            <header className="flex justify-between w-full py-3 text-sm transition-shadow duration-200">
+              <div className="px-6">
                 {[
                   { ph: 'Home', href: '/' },
                   { ph: 'Posts', href: '/posts' },
@@ -33,8 +34,7 @@ export default function RootLayout({
                 ))}
               </div>
             </header>
-            {/* `children` should be wrapped within <main>, prolly */}
-            <div>{children} </div>
+            <div className="flex">{children} </div>
           </div>
         </div>
       </body>

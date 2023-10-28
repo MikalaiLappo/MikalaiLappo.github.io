@@ -10,9 +10,15 @@ module.exports = {
   theme: {
     colors: {
       atten: '#383a58',
-      supp: '#1d1b22',
-      white: '#fff',
       primary: '#E9A18D',
+      transparent: 'transparent',
+    },
+    backgroundColor: {
+      secondary: '#1d1b22',
+    },
+    textColor: {
+      white: '#fff',
+      secondary: '#b3afc0',
     },
   },
   plugins: [require('tailwind-dracula')('dracula', true)],

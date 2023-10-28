@@ -19,6 +19,7 @@
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.4",
+    "dracula-ui": "^1.0.6",
     "eslint": "^8.44.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",
