@@ -2,17 +2,18 @@
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/minigames/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/leaderboard/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    colors: {
+      atten: '#383a58',
+      supp: '#1d1b22',
+      white: '#fff',
+      primary: '#E9A18D',
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-dracula')('dracula', true)],
 }
