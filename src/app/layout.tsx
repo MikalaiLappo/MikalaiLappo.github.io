@@ -1,8 +1,9 @@
 import './globals.css'
 import 'dracula-ui/styles/dracula-ui.css'
-import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import cn from 'classnames'
+import { GithubIcon } from 'lucide-react'
+import { NavLink } from '@/ui/nav/NavBarLink'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,23 +19,39 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'bg-[#0e0d11] drac-scrollbar-grey')}>
+      <body className={cn(inter.className, 'bg-page drac-scrollbar-grey')}>
         <div className="flex justify-center w-full">
           <div className="flex flex-col items-center w-full">
-            <header className="flex justify-between w-full py-3 text-sm transition-shadow duration-200">
-              <div className="px-6">
-                {[
-                  { ph: 'Home', href: '/' },
-                  { ph: 'Posts', href: '/posts' },
-                  { ph: 'Projects', href: '/projects' },
-                ].map(({ ph, href }, i) => (
-                  <Link className="px-4 text-white" key={href} href={href}>
-                    {ph}
-                  </Link>
-                ))}
+            <header className="fixed z-50 flex items-center justify-center w-full h-12 py-3 overflow-hidden text-sm transition-shadow duration-200 shadow bg-page">
+              <div className="flex items-center justify-between w-full h-full max-w-5xl px-6">
+                <div className="w-full">
+                  <NavLink href="/">About</NavLink>
+                </div>
+                <div className="flex justify-center w-full space-x-6">
+                  {[
+                    { ph: 'Notes', href: '/notes' },
+                    { ph: 'Projects', href: '/projects' },
+                    { ph: 'Haxxed', href: '/haxxed' },
+                  ].map(({ ph, href }, i) => (
+                    <NavLink key={href} href={href}>
+                      {ph}
+                    </NavLink>
+                  ))}
+                </div>
+                <div className="flex justify-end w-full">
+                  <NavLink
+                    target="_blank"
+                    href="https://github.com/MikalaiLappo/mikalailappo.github.io"
+                  >
+                    <GithubIcon
+                      className="hover:stroke-white stroke-secondary"
+                      size="18"
+                    />
+                  </NavLink>
+                </div>
               </div>
             </header>
-            <main>{children}</main>
+            <main className="mt-16">{children}</main>
           </div>
         </div>
       </body>
