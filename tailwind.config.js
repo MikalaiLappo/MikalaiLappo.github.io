@@ -13,10 +13,12 @@ module.exports = {
         atten: '#383a58',
         primary: '#E9A18D',
         transparent: 'transparent',
+        inactive: '#565167',
       },
       backgroundColor: {
         page: '#0e0d11',
         secondary: '#1d1b22',
+        alt: '#1b1b1f',
       },
       textColor: {
         white: '#fff',
@@ -120,26 +122,29 @@ module.exports = {
           '20%': {
             backgroundColor: '#67e1fb',
           },
-          '39%': {
+          '35%': {
             backgroundColor: '#67e1fb',
           },
           '40%': {
             backgroundColor: '#ff5555',
           },
-          '59%': {
+          '55%': {
             backgroundColor: '#ff5555',
           },
           '60%': {
             backgroundColor: '#f1fa8c',
           },
-          '79%': {
+          '75%': {
             backgroundColor: '#f1fa8c',
           },
           '80%': {
             backgroundColor: '#50fa7b',
           },
-          '100%': {
+          '95%': {
             backgroundColor: '#50fa7b',
+          },
+          '100%': {
+            backgroundColor: '#bd93f9',
           },
         },
       },

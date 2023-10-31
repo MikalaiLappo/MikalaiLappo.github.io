@@ -19,11 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'bg-page drac-scrollbar-grey')}>
+      <body className={cn(inter.className, 'bg-alt drac-scrollbar-grey')}>
         <div className="flex justify-center w-full">
           <div className="flex flex-col items-center w-full">
-            <header className="fixed z-50 flex items-center justify-center w-full h-12 py-3 overflow-hidden text-sm transition-shadow duration-200 shadow bg-page">
-              <div className="flex items-center justify-between w-full h-full max-w-5xl px-6">
+            <header className="fixed z-50 flex items-center justify-center w-full h-12 py-3 overflow-hidden text-sm  duration-200 border-b-[1px] border-black shadow bg-alt">
+              <div className="flex items-center justify-between w-full h-full max-w-6xl px-6">
                 <div className="w-full">
                   <NavLink href="/">About</NavLink>
                 </div>
@@ -51,7 +51,7 @@ export default function RootLayout({
                 </div>
               </div>
             </header>
-            <main className="mt-16">{children}</main>
+            <main className="w-full max-w-6xl mt-16">{children}</main>
           </div>
         </div>
       </body>
