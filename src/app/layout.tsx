@@ -45,14 +45,13 @@ export default function RootLayout({
                   {[
                     { ph: 'Notes', href: '/notes' },
                     { ph: 'Projects', href: '/projects' },
-                    { ph: 'Haxxed', href: '/haxxed' },
                   ].map(({ ph, href }, i) => (
                     <NavLink key={href} href={href}>
                       {ph}
                     </NavLink>
                   ))}
                 </div>
-                <div className="flex justify-end w-full">
+                <div className="justify-end hidden w-full sm:flex">
                   <NavLink
                     className="group"
                     target="_blank"
