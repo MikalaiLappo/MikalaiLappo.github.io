@@ -1,11 +1,9 @@
 import Card from '@/ui/Card'
 import BoxFall from '@/minigames/BoxFall'
-import { allDocs } from 'contentlayer/generated'
+import { allProjects } from 'contentlayer/generated'
 
 const ProjectsPage = async () => {
-  const projects = allDocs.filter(
-    ({ contentType }) => contentType === 'projects',
-  )
+  const projects = allProjects
 
   return (
     <div className="flex flex-col justify-center space-y-8 md:space-y-0 md:flex-row md:space-x-6">

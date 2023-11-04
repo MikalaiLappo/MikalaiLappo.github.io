@@ -13,7 +13,7 @@ const computedFields = {
   cover: {
     type: 'string',
     resolve: (doc) =>
-      `/images/${doc._raw.flattenedPath.split('/').slice(0, -1).join('/')}/${
+      `/content/${doc._raw.flattenedPath.split('/').slice(0, -1).join('/')}/${
         doc.cover
       }`,
   },
@@ -23,9 +23,9 @@ const computedFields = {
   },
 }
 
-export const Doc = defineDocumentType(() => ({
-  name: 'Doc',
-  filePathPattern: './**/*.mdx',
+export const BlogPost = defineDocumentType(() => ({
+  name: 'BlogPost',
+  filePathPattern: './blog/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -40,18 +40,44 @@ export const Doc = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    /* technologies: {
+  },
+  computedFields,
+}))
+
+export const ProjectInfo = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: './projects/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    excerpt: {
+      type: 'string',
+      required: true,
+    },
+    cover: {
+      type: 'string',
+      required: true,
+    },
+    primaryTech: {
       type: 'list',
-      of: 'string',
+      of: { type: 'string' },
+      required: true,
+    },
+    secondaryTech: {
+      type: 'list',
+      of: { type: 'string' },
       required: false,
-    }, */
+    },
   },
   computedFields,
 }))
 
 export default makeSource({
   contentDirPath: 'src/content',
-  documentTypes: [Doc],
+  documentTypes: [BlogPost, ProjectInfo],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
