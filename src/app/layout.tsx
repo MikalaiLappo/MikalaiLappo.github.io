@@ -37,30 +37,8 @@ export default function RootLayout({
                 inter.className,
               )}
             >
-              <div className="flex items-center justify-between w-full h-full max-w-6xl px-6">
-                <div className="w-full">
-                  <NavLink href="/">About</NavLink>
-                </div>
-                <div className="flex justify-center w-full space-x-6">
-                  {[
-                    { ph: 'Notes', href: '/notes' },
-                    { ph: 'Projects', href: '/projects' },
-                  ].map(({ ph, href }, i) => (
-                    <NavLink key={href} href={href}>
-                      {ph}
-                    </NavLink>
-                  ))}
-                </div>
-                <div className="justify-end hidden w-full sm:flex">
-                  <NavLink
-                    className="group"
-                    target="_blank"
-                    href="https://github.com/MikalaiLappo/mikalailappo.github.io"
-                  >
-                    <FaGithub size={20} />
-                  </NavLink>
-                </div>
-              </div>
+              <NavDesktop />
+              <NavMobile />
             </header>
             <main className="w-full max-w-6xl p-8 mt-16">{children}</main>
             <footer className="flex justify-center text-[#fffff5db] text-3xl sm:text-2xl bg-secondary w-full">
@@ -101,3 +79,44 @@ export default function RootLayout({
     </html>
   )
 }
+
+const NavDesktop = () => (
+  <div className="items-center justify-between hidden w-full h-full max-w-6xl px-6 sm:flex">
+    <div className="w-full">
+      <NavLink href="/">About</NavLink>
+    </div>
+    <div className="flex justify-center w-full space-x-6">
+      {[
+        { ph: 'Blog', href: '/blog' },
+        { ph: 'Projects', href: '/projects' },
+      ].map(({ ph, href }, i) => (
+        <NavLink key={href} href={href}>
+          {ph}
+        </NavLink>
+      ))}
+    </div>
+    <div className="justify-end hidden w-full sm:flex">
+      <NavLink
+        className="group"
+        target="_blank"
+        href="https://github.com/MikalaiLappo/mikalailappo.github.io"
+      >
+        <FaGithub size={20} />
+      </NavLink>
+    </div>
+  </div>
+)
+
+const NavMobile = () => (
+  <div className="flex items-center justify-between w-full h-full px-12 sm:hidden">
+    <NavLink href="/">About</NavLink>
+    {[
+      { ph: 'Blog', href: '/blog' },
+      { ph: 'Projects', href: '/projects' },
+    ].map(({ ph, href }, i) => (
+      <NavLink key={href} href={href}>
+        {ph}
+      </NavLink>
+    ))}
+  </div>
+)
