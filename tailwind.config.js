@@ -10,14 +10,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        atten: '#383a58',
+        attention: '#f67373',
         primary: '#E9A18D',
         transparent: 'transparent',
         inactive: '#565167',
+        telegram: '#14a8e5',
+        calm: '#fffff5db',
       },
       backgroundColor: {
         page: '#0e0d11',
-        secondary: '#1d1b22',
+        primary: '#1b1b1f',
+        secondary: '#202127',
         alt: '#1b1b1f',
       },
       textColor: {

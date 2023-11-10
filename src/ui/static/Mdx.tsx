@@ -4,6 +4,9 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import cn from 'classnames'
 import { Callout } from './Callout'
 import Card from '../Card'
+import { List, OrderedList } from 'dracula-ui'
+import { BlogPost, Project } from 'contentlayer/generated'
+import Link from 'next/link'
 
 const components: {
   [key: string]: (args: any) => {} | any
@@ -20,7 +23,7 @@ const components: {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        'mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0',
+        'my-10 scroll-m-20 border-b text-3xl font-semibold tracking-tight first:mt-0',
         className,
       )}
       {...props}
@@ -63,25 +66,28 @@ const components: {
     />
   ),
   a: ({ className, ...props }) => (
-    <a
+    <Link
+      target="_blank"
       className={cn('font-medium underline underline-offset-4', className)}
       {...props}
     />
   ),
   p: ({ className, ...props }) => (
-    <p
-      className={cn('leading-7 [&:not(:first-child)]:mt-6', className)}
+    <p className={cn('leading-7', className)} {...props} />
+  ),
+  ul: ({ className, ...props }) => (
+    <List
+      color="purple"
+      variant="unordered"
+      className={cn('p-4', className)}
       {...props}
     />
   ),
-  ul: ({ className, ...props }) => (
-    <ul className={cn('my-6 ml-6 list-disc', className)} {...props} />
-  ),
   ol: ({ className, ...props }) => (
-    <ol className={cn('my-6 ml-6 list-decimal', className)} {...props} />
+    <OrderedList color="red" className={cn('p-4', className)} {...props} />
   ),
   li: ({ className, ...props }) => (
-    <li className={cn('mt-2', className)} {...props} />
+    <li className={cn('py-2 ', className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
     <blockquote
@@ -132,21 +138,12 @@ const components: {
   ),
   pre: ({ className, ...props }) => (
     <pre
-      className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4',
-        className,
-      )}
+      className={cn('overflow-x-auto rounded-lg bg-black ', className)}
       {...props}
     />
   ),
   code: ({ className, ...props }) => (
-    <code
-      className={cn(
-        'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm',
-        className,
-      )}
-      {...props}
-    />
+    <code className={cn('p-2', className)} {...props} />
   ),
   Image,
   Callout,
@@ -155,14 +152,23 @@ const components: {
 
 interface MdxProps {
   code: string
+  data: BlogPost | Project
 }
 
-export function Mdx({ code }: MdxProps) {
+export function Mdx({ code, data }: MdxProps) {
   const Component = useMDXComponent(code)
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-8 rounded shadow-xl mdx bg-dracula-darker-900">
-      <Component components={components} />
+    <div className="flex justify-center">
+      <div className={cn('container flex flex-col p-8 pt-2 text-calm')}>
+        <div className="p-2 sm:p-8">
+          <h1 className="text-4xl font-bold tracking-tight text-attention">
+            {data.title}
+          </h1>
+          <h2 className="p-4 text-xl">{data.excerpt}</h2>
+        </div>
+        <Component components={components} />
+      </div>
     </div>
   )
 }
