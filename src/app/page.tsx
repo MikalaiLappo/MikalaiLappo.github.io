@@ -16,7 +16,7 @@ const HomePage = async () => {
   return (
     <div className={cn('flex flex-col text-white mt-16', roboto.className)}>
       <IntroBlock />
-      <div className={cn('flex flex-col space-y-12 mt-20')}>
+      <div className={cn('flex flex-col space-y-12 mt-20 sm:mt-40')}>
         <SkillsBlock />
         <ContactsBlock />
       </div>
@@ -89,13 +89,6 @@ const SkillsBlock = () => (
         <b>FullStack</b>
         {'  '}
         working also with{' '}
-        <Link
-          target="_blank"
-          href="https://expressjs.com/"
-          className="px-1 transition-all border-b-2 border-dracula-green-600 hover:text-black hover:bg-dracula-green-600"
-        >
-          Express.js
-        </Link>{' '}
         <Link
           target="_blank"
           href="https://nestjs.com/"
