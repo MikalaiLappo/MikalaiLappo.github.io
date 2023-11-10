@@ -1,20 +1,14 @@
 import Card from '@/ui/Card'
 import { allProjects } from 'contentlayer/generated'
+import { ProjectCard } from './ProjectCard'
 
 const ProjectsPage = async () => {
   const projects = allProjects
 
   return (
     <>
-      {projects.map(({ link, cover, title, excerpt }, i) => (
-        <Card
-          className="m"
-          key={link + i}
-          link={link}
-          coverSrc={cover}
-          title={title}
-          excerpt={excerpt}
-        />
+      {projects.map((props, i) => (
+        <ProjectCard key={props.link + i} data={props} />
       ))}
     </>
   )

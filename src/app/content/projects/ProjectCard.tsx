@@ -6,7 +6,13 @@ const ProjectCard = ({
   data: { progLanguages, frameworks, title, excerpt, cover, link },
 }: IProjectCardProps) => {
   return (
-    <Card title={title} excerpt={excerpt} coverSrc={cover} link={link}>
+    <Card
+      title={title}
+      excerpt={excerpt}
+      coverSrc={cover}
+      link={link}
+      turnOffLink={true} // Dev.
+    >
       <div>{progLanguages}</div>
     </Card>
   )
