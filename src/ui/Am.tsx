@@ -3,7 +3,7 @@ import cn from 'classnames'
 const Am = () => (
   <div
     className={cn(
-      'text-xl font-bold text-black align-center group uppercase text-right',
+      'inline-block text-xl font-bold text-black align-center group uppercase text-right',
     )}
   >
     <div className="inline-block">

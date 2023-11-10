@@ -91,6 +91,13 @@ const SkillsBlock = () => (
         working also with{' '}
         <Link
           target="_blank"
+          href="https://expressjs.com/"
+          className="px-1 transition-all border-b-2 border-dracula-green-600 hover:text-black hover:bg-dracula-green-600"
+        >
+          Express.js
+        </Link>{' '}
+        <Link
+          target="_blank"
           href="https://nestjs.com/"
           className="px-1 transition-all border-b-2 border-red-600 hover:text-black hover:bg-red-600"
         >
