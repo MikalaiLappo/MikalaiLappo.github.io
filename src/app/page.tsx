@@ -1,4 +1,3 @@
-import { allDocs } from 'contentlayer/generated'
 import { Am } from '@/ui/Am'
 import cn from 'classnames'
 import { Gruppo, Inter, Source_Code_Pro } from 'next/font/google'
@@ -14,14 +13,10 @@ const roboto = Roboto({
 })
 
 const HomePage = async () => {
-  const [projects, posts] = ['projects', 'posts'].map((type) =>
-    allDocs.filter(({ contentType }) => contentType === type),
-  )
-
   return (
-    <div className={cn('flex flex-col text-white', roboto.className)}>
+    <div className={cn('flex flex-col text-white mt-16', roboto.className)}>
       <IntroBlock />
-      <div className={cn('flex flex-col space-y-12 mt-16')}>
+      <div className={cn('flex flex-col space-y-12 mt-20')}>
         <SkillsBlock />
         <ContactsBlock />
       </div>
@@ -49,7 +44,7 @@ const ContactsBlock = () => (
 )
 
 const IntroBlock = () => (
-  <div className="flex mt-10 text-center md:text-right">
+  <div className="flex text-center md:text-right">
     <div className="w-full text-2xl">
       <div className="flex flex-col items-center px-8 leading-10">
         This blog supposed to make me look an IT guy
