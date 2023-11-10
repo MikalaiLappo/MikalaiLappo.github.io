@@ -1,18 +1,23 @@
-import { allDocs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import { Mdx } from './Mdx'
+import { allBlogPosts, allProjects } from 'contentlayer/generated'
 
-const getDocFromParams = async (slug: string) => {
-  const doc = allDocs.find((doc) => doc.link.endsWith(slug))
+type TContentDomain = 'blog' | 'projects'
+const getDocFromParams = async (domain: TContentDomain, slug: string) => {
+  const content = domain === 'blog' ? allBlogPosts : allProjects
+  const doc = content.find((doc) => doc.link.endsWith(slug))
+
   if (!doc) return notFound()
 
   return doc
 }
 
-type IStaticContentProps = { params: { slug: string } }
-const StaticContent = async ({ params: { slug } }: IStaticContentProps) => {
-  const doc = await getDocFromParams(slug)
+type IStaticContentProps = { params: any }
+const StaticContent =
+  (domain: TContentDomain) =>
+  async ({ params: { slug } }: IStaticContentProps) => {
+    const doc = await getDocFromParams(domain, slug)
 
-  return <Mdx code={doc.body.code} />
-}
+    return <Mdx data={doc} code={doc.body.code} />
+  }
 export default StaticContent
