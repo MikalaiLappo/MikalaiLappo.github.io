@@ -87,8 +87,8 @@ const NavDesktop = () => (
     </div>
     <div className="flex justify-center w-full space-x-6">
       {[
-        { ph: 'Blog', href: '/blog' },
-        { ph: 'Projects', href: '/projects' },
+        { ph: 'Blog', href: '/content/blog' },
+        { ph: 'Projects', href: '/content/projects' },
       ].map(({ ph, href }, i) => (
         <NavLink key={href} href={href}>
           {ph}
@@ -111,8 +111,8 @@ const NavMobile = () => (
   <div className="flex items-center justify-between w-full h-full px-12 sm:hidden">
     <NavLink href="/">About</NavLink>
     {[
-      { ph: 'Blog', href: '/blog' },
-      { ph: 'Projects', href: '/projects' },
+      { ph: 'Blog', href: '/content/blog' },
+      { ph: 'Projects', href: '/content/projects' },
     ].map(({ ph, href }, i) => (
       <NavLink key={href} href={href}>
         {ph}

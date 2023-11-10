@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm'
 const computedFields = {
   link: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/content/${doc._raw.flattenedPath}`,
   },
   cover: {
     type: 'string',
@@ -61,15 +61,40 @@ export const ProjectInfo = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    primaryTech: {
+    progLanguages: {
       type: 'list',
-      of: { type: 'string' },
+      of: {
+        type: 'enum',
+        options: ['TypeScript, JavaScript', 'Golang', 'Python'],
+      },
       required: true,
     },
-    secondaryTech: {
+    frameworks: {
       type: 'list',
-      of: { type: 'string' },
-      required: false,
+      of: {
+        type: 'enum',
+        options: [
+          'Next.js',
+          'React',
+          'Redux',
+          'Phaser',
+          'Gitlab',
+          'Github',
+          'Nest.js',
+          'Express.js',
+          'PostgreSQL',
+          'MySQL',
+          'Contentlayer',
+          'Prisma',
+          'TailwindCSS',
+          'MaterialUI',
+        ],
+      },
+      required: true,
+    },
+    status: {
+      type: 'enum',
+      options: ['Job', 'WIP', 'Live'],
     },
   },
   computedFields,
