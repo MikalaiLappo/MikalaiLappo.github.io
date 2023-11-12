@@ -65,7 +65,7 @@ export const ProjectInfo = defineDocumentType(() => ({
       type: 'list',
       of: {
         type: 'enum',
-        options: ['TypeScript, JavaScript', 'Golang', 'Python'],
+        options: ['TypeScript', 'JavaScript', 'Golang', 'Python'],
       },
       required: true,
     },
