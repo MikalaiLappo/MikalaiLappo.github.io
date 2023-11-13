@@ -1,3 +1,5 @@
+const { withContentlayer } = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -5,6 +7,10 @@ const nextConfig = {
   },
   reactStrictMode: true,
   transpilePackages: ['lucide-react'],
+  images: {
+    domains: ['skillicons.dev'],
+    dangerouslyAllowSVG: true,
+  },
 }
 
-module.exports = nextConfig
+module.exports = withContentlayer(nextConfig)
