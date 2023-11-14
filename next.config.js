@@ -11,6 +11,7 @@ const nextConfig = {
     domains: ['skillicons.dev'],
     dangerouslyAllowSVG: true,
   },
+  output: 'export',
 }
 
 module.exports = withContentlayer(nextConfig)
