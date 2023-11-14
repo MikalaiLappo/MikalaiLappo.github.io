@@ -5,7 +5,7 @@ const BlogPage = () => {
   const projects = allBlogPosts.filter((d) => d.contentType === 'blog')
 
   return (
-    <>
+    <div className="pt-8">
       {projects.map(({ link, cover, title, excerpt }, i) => (
         <Card
           className="m"
@@ -16,7 +16,7 @@ const BlogPage = () => {
           excerpt={excerpt}
         />
       ))}
-    </>
+    </div>
   )
 }
 export default BlogPage

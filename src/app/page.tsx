@@ -14,7 +14,12 @@ const roboto = Roboto({
 
 const HomePage = async () => {
   return (
-    <div className={cn('flex flex-col text-white mt-16', roboto.className)}>
+    <div
+      className={cn(
+        'flex flex-col text-white mt-16 sm:mt-24',
+        roboto.className,
+      )}
+    >
       <IntroBlock />
       <div className={cn('flex flex-col space-y-12 mt-20 sm:mt-40')}>
         <SkillsBlock />
@@ -49,7 +54,7 @@ const IntroBlock = () => (
       <div className="flex flex-col items-center px-8 leading-10">
         This blog supposed to make me look an IT guy
         <div className="mb-1">
-          Btw I&apos;m <b>Mikalai</b> the <Am />
+          Btw I&apos;m <b>Mikalai, the</b> <Am />
         </div>
       </div>
     </div>

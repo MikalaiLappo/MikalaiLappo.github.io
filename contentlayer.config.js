@@ -55,7 +55,7 @@ export const ProjectInfo = defineDocumentType(() => ({
     },
     excerpt: {
       type: 'string',
-      required: true,
+      required: false,
     },
     cover: {
       type: 'string',
@@ -90,11 +90,12 @@ export const ProjectInfo = defineDocumentType(() => ({
           'MaterialUI',
         ],
       },
-      required: true,
+      required: false,
     },
     status: {
       type: 'enum',
-      options: ['Job', 'WIP', 'Live'],
+      options: ['Job', 'WIP', 'Demo', 'Live'],
+      required: true,
     },
   },
   computedFields,

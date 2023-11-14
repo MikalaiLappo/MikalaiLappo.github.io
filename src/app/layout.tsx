@@ -40,7 +40,7 @@ export default function RootLayout({
               <NavDesktop />
               <NavMobile />
             </header>
-            <main className="w-full max-w-6xl p-8">{children}</main>
+            <main className="w-full h-auto max-w-6xl p-8">{children}</main>
             <footer className="flex justify-center text-[#fffff5db] text-3xl sm:text-2xl bg-secondary w-full">
               <div className="flex justify-center w-full max-w-6xl px-6 py-5 space-x-6 sm:py-2 sm:justify-end">
                 <Link

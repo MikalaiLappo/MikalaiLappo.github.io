@@ -1,15 +1,25 @@
-import Card from '@/ui/Card'
-import { allProjects } from 'contentlayer/generated'
+import { Project, allProjects } from 'contentlayer/generated'
 import { ProjectCard } from './ProjectCard'
+
+const statusPriority: { [k in Project['status']]: number } = {
+  Job: 999,
+  Live: 500,
+  Demo: 250,
+  WIP: 50,
+}
 
 const ProjectsPage = async () => {
   const projects = allProjects
 
   return (
     <>
-      {projects.map((props, i) => (
-        <ProjectCard key={props.link + i} data={props} />
-      ))}
+      {projects
+        .sort((a, b) => statusPriority[b.status] - statusPriority[a.status])
+        .map((props, i) => (
+          <div key={props.link + i} className="pt-8">
+            <ProjectCard {...props} />
+          </div>
+        ))}
     </>
   )
 }
