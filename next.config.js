@@ -10,6 +10,7 @@ const nextConfig = {
   images: {
     domains: ['skillicons.dev'],
     dangerouslyAllowSVG: true,
+    unoptimized: true,
   },
   output: 'export',
 }
