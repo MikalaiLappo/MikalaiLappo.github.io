@@ -15,8 +15,8 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: 'Create Next App',
-  description: '',
+  title: 'Mikalai Lappo',
+  description: "Mikalai's personal page",
 }
 
 export default function RootLayout({
