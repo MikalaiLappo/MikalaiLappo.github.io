@@ -87,7 +87,7 @@ const NavDesktop = () => (
     </div>
     <div className="flex justify-center w-full space-x-6">
       {[
-        { ph: 'Blog', href: '/content/blog' },
+        /* { ph: 'Blog', href: '/content/blog' }, */
         { ph: 'Projects', href: '/content/projects' },
       ].map(({ ph, href }, i) => (
         <NavLink key={href} href={href}>
@@ -111,12 +111,19 @@ const NavMobile = () => (
   <div className="flex items-center justify-between w-full h-full px-12 sm:hidden">
     <NavLink href="/">About</NavLink>
     {[
-      { ph: 'Blog', href: '/content/blog' },
+      /*{ ph: 'Blog', href: '/content/blog' },*/
       { ph: 'Projects', href: '/content/projects' },
     ].map(({ ph, href }, i) => (
       <NavLink key={href} href={href}>
         {ph}
       </NavLink>
     ))}
+    <NavLink
+      className="group"
+      target="_blank"
+      href="https://github.com/MikalaiLappo/mikalailappo.github.io"
+    >
+      <FaGithub size={20} />
+    </NavLink>
   </div>
 )
