@@ -16,7 +16,7 @@ const HomePage = async () => {
   return (
     <div
       className={cn(
-        'flex flex-col text-white mt-16 sm:mt-24',
+        'flex flex-col text-white mt-16 sm:mt-20',
         roboto.className,
       )}
     >
@@ -109,6 +109,10 @@ const SkillsBlock = () => (
         >
           T3-Stack
         </Link>
+      </div>
+      <div>
+        I freelance for about <b>4 years</b> working on a wide range of
+        <i>Web products</i> including <i>SaaS</i>
       </div>
     </div>
   </div>

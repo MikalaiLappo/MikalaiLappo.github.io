@@ -55,7 +55,7 @@ const ProjectCard = ({
           </span>
         </div>
         {!excerpt ? null : (
-          <div className="items-center py-4 text-sm break-word text-secondary line-clamp-3">
+          <div className="items-center py-6 text-sm break-word text-secondary line-clamp-3">
             {excerpt}
           </div>
         )}
