@@ -45,17 +45,10 @@ export default function RootLayout({
               <div className="flex justify-center w-full max-w-6xl px-6 py-5 space-x-6 sm:py-2 sm:justify-end">
                 <Link
                   target="_blank"
-                  href="https://www.codewars.com/users/MikalaiLappo"
+                  href="https://t.me/MikalaiLappo"
                   className="transition-all hover:text-white"
                 >
-                  <SiCodewars />
-                </Link>
-                <Link
-                  target="_blank"
-                  href="mailto:mikalailappo@yandex.by"
-                  className="transition-all hover:text-white"
-                >
-                  <AiOutlineMail />
+                  <FaTelegram />
                 </Link>
                 <Link
                   target="_blank"
@@ -66,10 +59,10 @@ export default function RootLayout({
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://t.me/MikalaiLappo"
+                  href="mailto:mikalailappo@yandex.by"
                   className="transition-all hover:text-white"
                 >
-                  <FaTelegram />
+                  <AiOutlineMail />
                 </Link>
               </div>
             </footer>
